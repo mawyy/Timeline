@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Timeline</title>
+    </head>
+    <body>
+        <div class="app">
+            <div id="header">
+                <img id="logo" src="img/logo.png">
+            
+                <div id="menu">
+                    <hr>
+                    <button id="menu-btn">&#9776;</button>
+
+                    <div id="menu-contenu" class="hidden">
+                        <div><a href="index.html">Accueil</a></div><hr>
+                        <div><a href="ajout.html">Ajouter un article</a></div><hr>
+                        <div><a href="apropos.html">A propos</a></div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="contenu">
+                <h1>Ajouter un article</h1>
+                <hr>
+                <form action="index.html" method="post">
+                    <div>
+                        <label for="titre">Titre :</label>
+                        <input type="text" id="titre" name="titre_article">
+                    </div>
+                    <div>
+                        <label for="description">Description :</label>
+                        <textarea id="description" name="description_article"></textarea>
+                    </div>
+                    <div class="button">
+                        <button type="submit">Publier</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+    </body>
+</html>
