@@ -36,10 +36,21 @@ var app = {
             }
 
             else {
-
                 $("#menu-contenu").addClass("hidden");
             }
         });
+
+        document.getElementById("removeProjectFromLocalStorage").addEventListener("click", removeProjectFromLocalStorage);
+
+        function removeProjectFromLocalStorage() {
+            localStorage.clear();
+        }
+
+        for( i=1; i<=localStorage.length; i++) {
+            var article = JSON.parse(localStorage.getItem(i));
+
+            $("#contenu").append("<div><H5>" + article.title + "</H5><p>" + article.description + "</p></div>");
+        }
     },
 
    

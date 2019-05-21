@@ -21,26 +21,27 @@
                     <div id="menu-contenu" class="hidden">
                         <div><a href="index.html">Accueil</a></div><hr>
                         <div><a href="ajout.html">Ajouter un article</a></div><hr>
-                        <div><a href="apropos.html">A propos</a></div>
+                        <div><a href="apropos.html">À propos</a></div>
                     </div>
                     <hr>
                 </div>
             </div>
 
-            <div class="contenu">
+            <div class="ajout-contenu">
                 <h1>Ajouter un article</h1>
                 <hr>
                 <form action="index.html" method="post">
-                    <div>
+                    <div class="ajout-label">
                         <label for="titre">Titre :</label>
                         <input type="text" id="titre" name="titre_article">
                     </div>
-                    <div>
+                    <div class="ajout-label">
                         <label for="description">Description :</label>
                         <textarea id="description" name="description_article"></textarea>
                     </div>
                     <div class="button">
                         <button type="submit">Publier</button>
+                        <button id="setLocalStorage">SET LOCAL STORAGE</button>
                     </div>
                 </form>
             </div>

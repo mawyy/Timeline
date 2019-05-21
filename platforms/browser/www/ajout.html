@@ -21,33 +21,38 @@
                     <div id="menu-contenu" class="hidden">
                         <div><a href="index.html">Accueil</a></div><hr>
                         <div><a href="ajout.html">Ajouter un article</a></div><hr>
-                        <div><a href="apropos.html">A propos</a></div>
+                        <div><a href="apropos.html">À propos</a></div>
                     </div>
                     <hr>
                 </div>
             </div>
 
-            <div class="contenu">
+            <div class="ajout-contenu">
                 <h1>Ajouter un article</h1>
                 <hr>
-                <form action="index.html" method="post">
-                    <div>
+                <form action="index.html">
+                    <div class="ajout-label">
                         <label for="titre">Titre :</label>
-                        <input type="text" id="titre" name="titre_article">
+                        <input type="text" id="title" name="title">
                     </div>
-                    <div>
+                    <div class="ajout-label">
                         <label for="description">Description :</label>
-                        <textarea id="description" name="description_article"></textarea>
+                        <textarea id="description" name="description"></textarea>
+                    </div>
+                    <div class="ajout-label">
+                        <button type="button"><img src="img/camera-solid.svg" width="20px"/> Ajouter une photo</button>
+                        <img src="img/loader.gif" width="20px"/> 
+                        <button type="button"><img src="img/video-solid.svg" width="20px"/> Ajouter une vidéo</button>
+                        <button type="button"><img src="img/map-marked-alt-solid.svg" width="20px"/> Ajouter une géolocalisation</button>
                     </div>
                     <div class="button">
-                        <button type="submit">Publier</button>
-                        <button id = "setLocalStorage">SET LOCAL STORAGE</button>
+                        <button id="setLocalStorage">Publier</button>
                     </div>
                 </form>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/ajout.js"></script>
     </body>
 </html>
