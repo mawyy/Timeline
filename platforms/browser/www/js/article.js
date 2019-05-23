@@ -39,7 +39,20 @@ $(document).ready(function() {
 
     /* Map */
 
+    if(article.latitude != "") {
 
+        var leafletMap = L.map('map').setView([article.latitude, article.longitude], 13);
+
+        var osmLayer = L.tileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 15
+        }).addTo(leafletMap);
+        L.marker([article.latitude, article.longitude]).addTo(leafletMap);
+        map.leaflet_map = leafletMap;
+    }
+    else {
+        $('#map').remove();
+    }
 
     /*Supprimer un article */
 

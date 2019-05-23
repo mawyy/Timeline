@@ -2,11 +2,11 @@
 
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+        <script type="text/javascript" src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Timeline</title>
     </head>
@@ -31,7 +31,7 @@
             <div id="detail_article">
             </div>
 
-            <div id='map'></div>
+            <div id="map" style="width:100%; height:250px; margin-top: 20px"></div>
             
             <form action="index.html">
                 <button id="removeArticle">Supprimer l'article</button>

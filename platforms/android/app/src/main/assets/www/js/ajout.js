@@ -73,6 +73,32 @@ $(document).ready(function() {
 
     }
 
+    $("#getGeolocation").on('click', getGeolocation);
+
+    function getGeolocation() {
+
+        var onSuccess = function(position) {
+
+            alert('Latitude: '          + position.coords.latitude          + '\n' +
+                  'Longitude: '         + position.coords.longitude         + '\n' +
+                  'Altitude: '          + position.coords.altitude          + '\n' +
+                  'Accuracy: '          + position.coords.accuracy          + '\n' +
+                  'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+                  'Heading: '           + position.coords.heading           + '\n' +
+                  'Speed: '             + position.coords.speed             + '\n' +
+                  'Timestamp: '         + position.timestamp                + '\n');
+        };
+
+        // onError Callback receives a PositionError object
+        //
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' +
+                  'message: ' + error.message + '\n');
+        }
+
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+
 
     $('#setLocalStorage').on('click', setLocalStorage);
 
@@ -80,14 +106,20 @@ $(document).ready(function() {
 
         $('#loader').attr('src', '../img/loader.gif');
 
+        var tab = [];
+
+        if(localStorage.getItem("data")) {
+            tab = JSON.parse(localStorage.getItem("data"));
+        }
+
         var article = {
-            title : $("#title").val(),
-            description : $("#description").val(),
-            image: $("#myImage").attr('src')
+            title : $("#title").val() || '',
+            description : $("#description").val() || '',
+            image: $("#myImage").attr('src') || ''
         };
 
-        var index = localStorage.length + 1;
+        tab.push(article);
 
-        localStorage.setItem(index, JSON.stringify(article)); 
+        localStorage.setItem('data', JSON.stringify(tab)); 
     }
 });
