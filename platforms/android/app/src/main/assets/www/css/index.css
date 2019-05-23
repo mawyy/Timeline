@@ -72,8 +72,10 @@ body {
     background-color: lightgrey;
 }
 
-.ajout-label > label {
+.ajout-label > label,button {
     display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .hidden {
     display: none;

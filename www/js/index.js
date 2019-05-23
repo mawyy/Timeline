@@ -36,24 +36,20 @@ var app = {
             }
 
             else {
+
                 $("#menu-contenu").addClass("hidden");
             }
         });
 
-        document.getElementById("removeProjectFromLocalStorage").addEventListener("click", removeProjectFromLocalStorage);
+        tab = JSON.parse(localStorage.getItem('data'));
 
-        function removeProjectFromLocalStorage() {
-            localStorage.clear();
-        }
-
-        for( i=1; i<=localStorage.length; i++) {
-            var article = JSON.parse(localStorage.getItem(i));
-
-            $("#contenu").append("<div><H5>" + article.title + "</H5><p>" + article.description + "</p></div>");
+        if(tab) {
+            for(i=0; i<tab.length ;i++) {
+                
+                $('#contenu').prepend("<div class='article'><a href='article.html?id=" + i + "'><img src='" + tab[i].image + "'><h3>" + tab[i].title + "</h3></a></div>");
+            }
         }
     },
-
-   
 };
 
 app.initialize();

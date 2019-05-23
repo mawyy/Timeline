@@ -21,7 +21,7 @@
                     <div id="menu-contenu" class="hidden">
                         <div><a href="index.html">Accueil</a></div><hr>
                         <div><a href="ajout.html">Ajouter un article</a></div><hr>
-                        <div><a href="apropos.html">À propos</a></div>
+                        <div><a href="apropos.html">A propos</a></div>
                     </div>
                     <hr>
                 </div>
@@ -40,16 +40,20 @@
                         <textarea id="description" name="description"></textarea>
                     </div>
                     <div class="ajout-label">
-                        <button type="button"><img src="img/camera-solid.svg" width="20px"/> Ajouter une photo</button>
-                        <img src="img/loader.gif" width="20px"/> 
-                        <button type="button"><img src="img/video-solid.svg" width="20px"/> Ajouter une vidéo</button>
-                        <button type="button"><img src="img/map-marked-alt-solid.svg" width="20px"/> Ajouter une géolocalisation</button>
+                        <button type="button" id="cameraTakePicture"><img src="img/camera-solid.svg" width="20px"/> Prendre une photo</button>
+                        <button type="button" id="cameraGetPicture"><img src="img/camera-solid.svg" width="20px"/> Ajouter une photo</button>
+                        <img id="myImage" width="100%"></img>
+                        <button type="button" id="cameraTakeVideo"><img src="img/video-solid.svg" width="20px"/> Ajouter une vidéo</button>
+                        <button type="button" id="getGeolocation"><img src="img/map-marked-alt-solid.svg" width="20px"/> Ajouter une géolocalisation</button>
                     </div>
                     <div class="button">
                         <button id="setLocalStorage">Publier</button>
+                        <img id="loader" width="20px"/> 
                     </div>
                 </form>
             </div>
+
+
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
