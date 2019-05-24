@@ -66,23 +66,59 @@ body {
     z-index: 1;
     padding: 10px 15px 10px 15px;
     position: absolute;
-    background-color: lightgrey;
+    background-color: rgb(247, 247, 247);
+    border: #a3a3a3 1px solid;
 }
+    #menu-contenu>div {
+        height: 30px;
+        width: 250px;   
+        padding-top: 2px;
+    }
+    #menu-contenu a {
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+    }
 
 .ajout-label > label,button {
     display: block;
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.ajout-label > input, textarea {
+    width: 100%;
+}
+.ajout-label>button {
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 13px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#contenu {
+    margin: 0 10px 10px 10px;
+}
+
 .hidden {
     display: none;
+}
+.ajout-contenu {
+    margin : 0 20px 0 20px;
+}
+
+#setLocalStorage, #removeArticle{
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    background-color: #555555;
+    padding: 12px 28px;
+    margin: auto;
+    margin-top: 10px;
 }
 
 .article {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
 .article h3 {
@@ -108,7 +144,10 @@ html, body, #map {
 }
 
 #detail_article p {
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: justify;
+    font-size: 14px;
 }
 
 .event {

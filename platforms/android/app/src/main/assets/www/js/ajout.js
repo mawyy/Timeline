@@ -79,18 +79,12 @@ $(document).ready(function() {
 
         var onSuccess = function(position) {
 
-            alert('Latitude: '          + position.coords.latitude          + '\n' +
-                  'Longitude: '         + position.coords.longitude         + '\n' +
-                  'Altitude: '          + position.coords.altitude          + '\n' +
-                  'Accuracy: '          + position.coords.accuracy          + '\n' +
-                  'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-                  'Heading: '           + position.coords.heading           + '\n' +
-                  'Speed: '             + position.coords.speed             + '\n' +
-                  'Timestamp: '         + position.timestamp                + '\n');
+            $("#latitude").attr('value', position.coords.latitude);
+            $("#longitude").attr('value', position.coords.longitude);
+            $("#successLocalisation").append("<span>Localisation ajoutée avec succès</span>");
+
         };
 
-        // onError Callback receives a PositionError object
-        //
         function onError(error) {
             alert('code: '    + error.code    + '\n' +
                   'message: ' + error.message + '\n');
@@ -104,7 +98,7 @@ $(document).ready(function() {
 
     function setLocalStorage() { 
 
-        $('#loader').attr('src', '../img/loader.gif');
+        $('#loader').attr('src', '../img/loader.gif');    
 
         var tab = [];
 
@@ -115,7 +109,9 @@ $(document).ready(function() {
         var article = {
             title : $("#title").val() || '',
             description : $("#description").val() || '',
-            image: $("#myImage").attr('src') || ''
+            image: $("#myImage").attr('src') || '',
+            latitude: $("#latitude").val() || '',
+            longitude: $("#longitude").attr('value') || '',
         };
 
         tab.push(article);
