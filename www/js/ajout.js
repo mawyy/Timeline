@@ -59,7 +59,7 @@ $(document).ready(function() {
             var i, path, len;
             for (i = 0, len = mediaFiles.length; i < len; i += 1) {
                 path = mediaFiles[i].fullPath;
-                console.log(mediaFiles);
+                $("#myVideo").append("<video controls src='" + mediaFiles[i].fullPath + "' style='width: 100px; height: 100px'>Test<video");
             }
         };
 
@@ -110,6 +110,7 @@ $(document).ready(function() {
             title : $("#title").val() || '',
             description : $("#description").val() || '',
             image: $("#myImage").attr('src') || '',
+            video: $("video").attr('src') || '',
             latitude: $("#latitude").val() || '',
             longitude: $("#longitude").attr('value') || '',
         };

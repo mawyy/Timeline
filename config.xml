@@ -24,4 +24,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.Notification" />
+    </feature>
 </widget>

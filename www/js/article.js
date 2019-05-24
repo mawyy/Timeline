@@ -34,7 +34,7 @@ $(document).ready(function() {
 
     $("#detail_article").append(
             "<H1>" + article.title + "</H1><p>" + article.description + "</p><img src='" + article.image + 
-            "' width='100%'/></div></a>");
+            "' width='100%'/><video controls src='" + article.video + "' style='width: 100%'></video></div></a>");
 
 
     /* Map */
