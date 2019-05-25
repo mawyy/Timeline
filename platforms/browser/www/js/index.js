@@ -31,12 +31,9 @@ var app = {
         $("#menu-btn").click(function() {
 
             if($("#menu-contenu").attr("class") == "hidden") {
-
                 $("#menu-contenu").removeClass("hidden");
             }
-
             else {
-
                 $("#menu-contenu").addClass("hidden");
             }
         });
@@ -46,8 +43,15 @@ var app = {
         if(tab) {
             for(i=0; i<tab.length ;i++) {
                 
-                $('#contenu').prepend("<div class='article'><a href='article.html?id=" + i + "'><img src='" + tab[i].image + "'><h3>" + tab[i].title + "</h3></a></div>");
+                $('#contenu').prepend("<div class='article'><a href='article.html?id=" + i + "'><h3>" + tab[i].title.toUpperCase() + "</h3><img src='" + tab[i].image + "'><div class='datePubli'>Article du " + tab[i].date + " a " + tab[i].heure + "</div></a></div>");
             }
+        }
+
+        if ($('#contenu').children('div').attr('class') == 'article') {
+            $("#noArticle").remove();
+        }
+        else {
+            $("#contenu").append("<div id='noArticle'>AUCUN ARTICLE</div>");
         }
     },
 };

@@ -32,9 +32,20 @@ $(document).ready(function() {
 
     article = tab[i];
 
-    $("#detail_article").append(
-            "<H1>" + article.title + "</H1><p>" + article.description + "</p><img src='" + article.image + 
+    if(article.video != '') {
+
+        $("#detail_article").prepend(
+            "<div id='dateArticle'>Article du " + article.date + " a " + article.heure + "</div><h1>" + article.title + "</h1><p>" + article.description + "</p><img src='" + article.image + 
+            "' width='100%'/><video controls src='" + article.video + "' style='width: 100%'></video></div></a>");
+    }
+    else {
+
+        $("#detail_article").prepend(
+            "<div id='dateArticle'>Article du " + article.date + " a " + article.heure + "</div><H1>" + article.title + "</H1><p>" + article.description + "</p><img src='" + article.image + 
             "' width='100%'/></div></a>");
+    }
+
+
 
 
     /* Map */

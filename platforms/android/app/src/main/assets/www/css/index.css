@@ -31,7 +31,6 @@ body {
     padding:5px;
     /* Padding to avoid the "unsafe" areas behind notches in the screen */
     padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
-    text-transform:uppercase;
     width:100%;
 }
 
@@ -73,6 +72,7 @@ body {
         height: 30px;
         width: 250px;   
         padding-top: 2px;
+        line-height: 30px;
     }
     #menu-contenu a {
         text-decoration: none;
@@ -92,19 +92,39 @@ body {
     border-radius: 8px;
     padding: 5px 10px;
     font-size: 13px;
-    margin: auto;
     margin-top: 10px;
 }
 
+#myImage, #myVideo {
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.7);
+    width: 100%;
+}
+
+video {
+    width: 100%;
+}
+
+#successLocalisation {
+    margin-top: 20px;
+    font-size: 15px;
+    color: green;
+}
+
 #contenu {
-    margin: 0 10px 10px 10px;
+    margin: 0 15px 15px 15px;
+}
+
+#noArticle {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 20px;
 }
 
 .hidden {
     display: none;
 }
 .ajout-contenu {
-    margin : 0 20px 0 20px;
+    margin : 0 25px 0 25px;
 }
 
 #setLocalStorage, #removeArticle{
@@ -118,20 +138,35 @@ body {
 }
 
 .article {
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.7);
+}
+
+.article a {
+    text-decoration: none;
+    color: black;
+}
+
+.datePubli {
+    height: 13px;
+    font-size: 8px;
+    text-align: right;
+    padding-right: 5px;
 }
 
 .article h3 {
     background-color: white;
     width: 100%;
     text-align: center;
-    height: 40px;
-    margin-top: 0px;
+    height: 35px;
+    margin-bottom: 0px;
+    margin-top: 20px;
     line-height: 35px;
 }
 
 .article img {
     width: 100%;
+    max-height: 200px;
+    object-fit: cover;
 }
 
 html, body, #map {
@@ -139,15 +174,37 @@ html, body, #map {
     width: 100vw;
 }
 
+#detail_article {
+    margin: 0 15px 20px 15px;
+}
+
+#detail_article #dateArticle {
+    font-size: 7px;
+}
+
 #detail_article h1 {
     text-align: center;
 }
 
 #detail_article p {
-    margin-left: 10px;
-    margin-right: 10px;
     text-align: justify;
-    font-size: 14px;
+    font-size: 15px;
+}
+
+#detail_article img, #detail_article video {
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.7);
+    margin-top: 20px;
+}
+
+#map {
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 250px;
+    margin-top: 20px;
+}
+
+#removeArticle {
+    margin-bottom: 20px;
 }
 
 .event {

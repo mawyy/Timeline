@@ -18,16 +18,15 @@
                     <button id="menu-btn">&#9776;</button>
 
                     <div id="menu-contenu" class="hidden">
-                        <div><a href="index.html">Accueil</a></div><hr>
-                        <div><a href="ajout.html">Ajouter un article</a></div><hr>
-                        <div><a href="apropos.html">A propos</a></div>
+                        <div><a href="index.html">ACCUEIL</a></div><hr>
+                        <div><a href="ajout.html">AJOUTER UN ARTICLE</a></div>
                     </div>
                     <hr>
                 </div>
             </div>
 
             <div class="ajout-contenu">
-                <h1>Ajouter un article</h1>
+                <h1>Nouvel article</h1>
                 <hr>
                 <form action="index.html">
                     <div class="ajout-label">
@@ -36,13 +35,14 @@
                     </div>
                     <div class="ajout-label">
                         <label for="description">Description :</label>
-                        <textarea id="description" name="description"></textarea>
+                        <textarea id="description" name="description" rows="5"></textarea>
                     </div>
                     <div class="ajout-label">
                         <button type="button" id="cameraTakePicture"><img src="img/camera-solid.svg" width="20px"/> Prendre une photo</button>
-                        <button type="button" id="cameraGetPicture"><img src="img/camera-solid.svg" width="20px"/> Ajouter une photo</button>
-                        <img id="myImage" width="100%"></img>
+                        <button type="button" id="cameraGetPicture"><img src="img/camera-solid.svg" width="20px"/> Galerie photo</button>
+                        <img id="myImage" hidden></img>
                         <button type="button" id="cameraTakeVideo"><img src="img/video-solid.svg" width="20px"/> Ajouter une vidéo</button>
+                        <div id="myVideo"></div>
                         <button type="button" id="getGeolocation"><img src="img/map-marked-alt-solid.svg" width="20px"/> Ajouter une géolocalisation</button>
                         <input id="latitude" hidden>
                         <input id="longitude" hidden>

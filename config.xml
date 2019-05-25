@@ -27,4 +27,11 @@
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.Notification" />
     </feature>
+    <platform name="android">
+        <splash src="res/screen/android/logo.png" density="land-hdpi"/>
+        <splash src="res/screen/android/logo.png" density="land-ldpi"/>
+        <splash src="res/screen/android/logo.png" density="land-mdpi"/>
+        <splash src="res/screen/android/logo.png" density="land-xhdpi"/>
+        <splash src="res/screen/android/logo.png" density="land-xxhdpi"/>
+     </platform>
 </widget>

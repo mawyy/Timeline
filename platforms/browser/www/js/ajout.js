@@ -23,7 +23,7 @@ $(document).ready(function() {
         });
 
         function onSuccess(imageData) {
-            $('#myImage').attr('src', "data:image/jpeg;base64," + imageData);
+            $('#myImage').attr('src', "data:image/jpeg;base64," + imageData).show();
         }
 
         function onFail(message) {
@@ -42,7 +42,7 @@ $(document).ready(function() {
         });
 
         function onSuccess(imageData) {
-            $('#myImage').attr('src', "data:image/jpeg;base64," + imageData);
+            $('#myImage').attr('src', "data:image/jpeg;base64," + imageData).show();
         }
 
         function onFail(message) {
@@ -59,7 +59,7 @@ $(document).ready(function() {
             var i, path, len;
             for (i = 0, len = mediaFiles.length; i < len; i += 1) {
                 path = mediaFiles[i].fullPath;
-                console.log(mediaFiles);
+                $("#myVideo").append("<video controls src='" + mediaFiles[i].fullPath + "'>Test<video");
             }
         };
 
@@ -81,6 +81,7 @@ $(document).ready(function() {
 
             $("#latitude").attr('value', position.coords.latitude);
             $("#longitude").attr('value', position.coords.longitude);
+            $("#getGeolocation").remove();
             $("#successLocalisation").append("<span>Localisation ajoutée avec succès</span>");
 
         };
@@ -98,7 +99,29 @@ $(document).ready(function() {
 
     function setLocalStorage() { 
 
-        $('#loader').attr('src', '../img/loader.gif');    
+        $('#loader').attr('src', '../img/loader.gif');  
+        
+        var dateToday = new Date();
+
+        var month = (dateToday.getMonth()+1);
+        if(month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        var day = dateToday.getDate();
+        if(day >= 1 && day <= 9) {
+            day = "0" + day;
+        }
+        var d = day + "/" + month + "/" + dateToday.getFullYear();
+
+        var hour = dateToday.getHours();
+        if(hour >= 1 && hour <= 9) {
+            hour = "0" + hour;
+        }
+        var min = dateToday.getMinutes();
+        if(min >= 1 && min <= 9) {
+            min = "0" + min;
+        }
+        var h = hour + "h" + min + "";
 
         var tab = [];
 
@@ -110,8 +133,11 @@ $(document).ready(function() {
             title : $("#title").val() || '',
             description : $("#description").val() || '',
             image: $("#myImage").attr('src') || '',
+            video: $("video").attr('src') || '',
             latitude: $("#latitude").val() || '',
             longitude: $("#longitude").attr('value') || '',
+            date: d,
+            heure: h,
         };
 
         tab.push(article);
